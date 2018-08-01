@@ -1,10 +1,8 @@
-const User  = require('../models/user');
-const jwt = require ('jsonwebtoken');
-const bcrypt = require ('bcryptjs');
-const axios = require ('axios');
+const User  = require('../models/user')
+const jwt = require ('jsonwebtoken')
 
 class UserController{
-
+  
    static logIn(req,res) {
       let { email, password } = req.body
 
@@ -50,7 +48,6 @@ class UserController{
      console.log('masuk')
 
      User.find({}).
-     populate('author').
      exec(function (err, users) {
         if (err) {
           res
