@@ -10,12 +10,14 @@ router.get('/', function(req, res, next) {
 router
   .post('/post', questionController.postQuestion)
 
+  .get('/findall', questionController.findAll)
+
+  .post('/upvote', questionController.upvote)
+
 //   .post('/login', userController.logIn)
 
 //   .post('/update', userController.updateUser)
 
 //   .get('/findUser/:userId', userController.findOne)
-
-//   .get('/findall', userController.findAll)
 
 module.exports = router

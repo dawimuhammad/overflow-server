@@ -77,11 +77,13 @@ class UserController{
 
    static register (req, res) {
       let { name, email, password, profileUrl } = req.body
+      
+      console.log(req.body)
 
        User.create({
-             name,
-             email,
-             password,
+             name: name,
+             email: email,
+             password: password,
              profileUrl: profileUrl
        })
        .then( function (result){

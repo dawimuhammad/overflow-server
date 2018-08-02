@@ -6,23 +6,13 @@ const saltRounds = 10
 const UserSchema = new Schema({
    name:{
       type: String,
-      required: "Please input name",
    },
    email:{
       type: String,
-      required: "Please input email",
       unique: true,
-      validate:{
-        validator: function(value){
-           let re = /^(([^<>()[\]\\., :\s@\"]+(\.[^<>()[\]\\., :\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-           return re.test(value)
-        }
-      },
-      unique:true,
    },
    password:{
       type: String,
-      required: "Please input password",
    },
    profileUrl: {
        type: String,
